@@ -39,11 +39,11 @@ function App() {
           </label>
           <label>
             Email
-            <input type="text" value={correo} onChange={(event) => setCorreo(event.target.value)} required/>
+            <input type="email" value={correo} onChange={(event) => setCorreo(event.target.value)} required/>
           </label>
           <label>
             Mensaje
-            <textarea  value={mensaje} onChange={(event) => setMensaje(event.target.value)} required></textarea>
+            <textarea  value={mensaje} onChange={(event) => setMensaje(event.target.value)} required maxLength={250}></textarea>
           </label>
           <br />
           <input type="submit" value="Submit"/>

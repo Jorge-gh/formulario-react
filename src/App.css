@@ -8,6 +8,7 @@
 #root {
   background: linear-gradient(to bottom, rgba(255, 0, 0, 0.8), rgba(0, 0, 255, 0.8));
   min-height: 100svh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,7 +36,7 @@ label{
   gap: 10px;
 }
 
-input[type="text"], textarea{
+input[type="text"], input[type="email"] , textarea{
   border: none;
   border-bottom: 1px solid #697565;
   outline: none;
@@ -54,7 +55,8 @@ textarea{
 
 input[type="submit"]{
   border: none;
-  width: 90%;
+  max-width: 270px;
+  width: 100%;
   height: 40px;
   font-size: 20px;
   font-family: "Montserrat", serif;
@@ -65,12 +67,12 @@ input[type="submit"]{
   color: white;
   background: linear-gradient(to right, rgba(255, 0, 0, 0.8), rgba(0, 0, 255, 0.8));
   cursor: pointer;
-  transition: all .7s ease;
-  background-size: 250%; 
+  transition: all .7s ease-out;
+  background-size: 240%;
 }
 
 input[type="submit"]:hover {
-  background-position: right;
+  background-position: calc(100% + 1px);
   transform: scale(1.05);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
 }
@@ -85,17 +87,17 @@ form{
   background-color: white;
   border-radius: 15px;
   padding: 25px;
-  margin: 40px;
+  margin: 20px;
 }
 
 article {
   max-width: 500px;
   width: 100%;
-  margin: auto;
   border-radius: 16px;
   overflow: hidden;
   background-color: white;
   box-shadow: 15px 10px 20px -5px rgba(0, 0, 0, 0.5);
+  margin-top: 50px;
 }
 
 article header{
@@ -143,7 +145,7 @@ article p h1{
 }
 
 .titulo{
-  font-size: 60px;
+  font-size: clamp(20px, 8vw, 60px);
   font-family: "Montserrat", serif;
   font-optical-sizing: auto;
   font-weight: 700;
@@ -154,10 +156,20 @@ article p h1{
 }
 
 .titulo p{
-  font-size: 25px;
+  font-size: clamp(5px, 10vw, 25px);
   font-family: "Montserrat", serif;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
   color: white;
+}
+
+@media screen and (max-width: 568px){
+  .titulo {
+    text-align: center;
+  }
+
+  .mainReturn {
+    padding: 0px 20px;
+  }
 }
