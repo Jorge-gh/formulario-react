@@ -14,11 +14,15 @@ function App() {
   }
 
   if (completado == true){
-    return<article>
-      <header><h1></h1>{nombre} {apellido} <h1>Mensaje recibido✅</h1></header>
+    return <main className='mainReturn'>
+       <h1 className='titulo'>Mensaje recibido,<br /> <p>Pronto estaremos en contacto.</p></h1>
+       
+      <article>
+      <header>{nombre} {apellido}</header>
       <p><h1>Mensaje</h1>{mensaje}</p>
       <p><h1>Email</h1>{correo}</p>
     </article>
+    </main>
   }
 
   return (
@@ -27,19 +31,19 @@ function App() {
           <h1>Formulario</h1>
           <label>
             Nombre
-            <input type="text" value={nombre} onChange={(event) => setNombre(event.target.value)} />
+            <input type="text" value={nombre} onChange={(event) => setNombre(event.target.value)} required/>
           </label>
           <label>
             Apellido
-            <input type="text" value={apellido} onChange={(event) => setApellido(event.target.value)}/>
+            <input type="text" value={apellido} onChange={(event) => setApellido(event.target.value)} required/>
           </label>
           <label>
             Email
-            <input type="text" value={correo} onChange={(event) => setCorreo(event.target.value)}/>
+            <input type="text" value={correo} onChange={(event) => setCorreo(event.target.value)} required/>
           </label>
           <label>
             Mensaje
-            <textarea  value={mensaje} onChange={(event) => setMensaje(event.target.value)}></textarea>
+            <textarea  value={mensaje} onChange={(event) => setMensaje(event.target.value)} required></textarea>
           </label>
           <br />
           <input type="submit" value="Submit"/>
